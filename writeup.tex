@@ -29,21 +29,75 @@
 % TODO : Fill your personal information here
 \begin{center}
     {\bf\large Homework 1} \\
-    {\bf\large M1522.001300 Probabilistic Graphical Models (2016 Fall)} \\
-    2016-21188 Byeongchang Kim \\
+    {\bf\large M1522.001300 Probabilistic Graphical Models (2017 Fall)} \\
+    2014-31117 Hyun Gi Ahn \\
     % Due: September 22 Thursday 11:59PM \\
     Date: September 22 Thursday
 \end{center}
-
-Fill anything you want to say about your homework.
 
 % TODO : Fill your answers
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Q1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conditional Independence Properties [15 points]}
+\section{Change of Random Variables [5 points]}
 
-Fill your answers.
+\text{If} $a > 0$, \text{then cdf} ${F}_{Y}(y) = P\left[x\leq\frac{Y-b}{a}\right] = F_{X}\left(\frac{Y-b}{a}\right)$ \\
+\\
+\text{On the other hand, if} $a < 0$, \text{then cdf} ${F}_{Y}(y) = P\left[x\geq\frac{Y-b}{a}\right] = 1-F_{X}\left(\frac{Y-b}{a}\right)$ \\
+\\
+We can get the pdf of $Y$ by differentiating with repect to $y$ \\
+\\
+If $a>1$, then ${f}_{Y}(y)=\frac{1}{a}{f}_{x}\left(\frac{y-b}{a}\right)$ and
+If $a<1$, then ${f}_{Y}(y)=-\frac{1}{a}{f}_{x}\left(\frac{y-b}{a}\right)$ \\
+As a result, $${f}_{Y}(y)={\frac{1}{\left|a\right|}}{f}_{x}\left(\frac{y-b}{a}\right)\xrightarrow{}(1)$$
+Gaussian pdf with mean $m$ and standard deviation $\sigma$
+$${f}_{X}(x)=\frac{1}{\sqrt{2\pi\left|a\sigma\right|}}{e}^{\frac{-(x-m)^2}{2\sigma^2}}\xrightarrow{}(2)$$
+Substitution of Eq. (2) into Eq. (1) yields
+$${f}_{Y}(y)=\frac{1}{\sqrt{2\pi\left|a\sigma\right|}}{e}^{\frac{-(y-b-am)^2}{2a\sigma^2}}$$
+Therfore $N(am+b;a^2\sigma^2)$
+\section{Conditional and Total Probability [10 points]}
+
+\begin{enumerate}
+    \item $$P(Department\;A)=0.62\times\frac{825}{825+108}+0.82\times\frac{108}{825+108}=0.64$$ \\
+          $$P(Department\;C)=0.33\times\frac{417}{417+375}+0.35\times\frac{375}{417+375}=0.33$$ \\
+
+    \item $$P(Men)=\frac{0.62\times825+0.63\times560+0.33\times417+0.06\times272}{825+108+560+25+417+375+272+341}=0.34$$
+          $$P(Women)=\frac{0.82\times108+0.68\times25+0.35\times375+0.07\times341}{825+108+560+25+417+375+272+341}=0.08$$
+
+    \item Because When Department C and D is given, the probability of Woman is low. In case of Woman Applicants of Department C, D is Higher than A, B. It means that the number of admitted students in Department C and D can affect to admission rate a lot
+\end{enumerate}
+
+\section{Independence Properties [20 points]}
+
+\begin{enumerate}
+\item $(X,W\perp Y\mid Z) \xrightarrow{symmetry}(Y\perp X,W\mid Z) \xrightarrow{Decomposition}(Y\perp X\mid Z)\;\text{and}\;(Y\perp W\mid Z)
+\xrightarrow{symmetry}\mathbf{(X\perp Y\mid Z)}\;\text{and}\;(W\perp Y\mid Z)$ \\
+
+\item $(X,W\perp Y\mid Z) \xrightarrow{symmetry}(Y\perp X,W\mid Z) \xrightarrow{Weak Union}(Y\perp X\mid Z,W)\;\text{and}\;(Y\perp W\mid Z)
+\xrightarrow{symmetry}\mathbf{(X\perp Y\mid W,Z)}\;\text{and}\;(W\perp Y\mid Z)$ \\
+
+\item
+
+\item $(X\perp Y\mid Z,W)\;\text{and}\;(Y\perp W\mid Z,X)\xrightarrow{symmetry}(Y\perp X\mid Z,W)\;\text{and}\;(Y\perp W\mid X,Z)\xrightarrow{Intersection}(Y\perp X,W\mid Z)\xrightarrow{symmetry}\mathbf{(X,W\perp Y\mid Z)}$
+\end{enumerate}
+
+\section{Naive Bayes Example [15 points]}
+
+\begin{enumerate}
+
+\item By Chain Rules\\
+
+\begin{align}
+\nomumber P(C,X_1,...,X_n)&=P(C)P(X_1,...,X_n\mid C)&&\\
+\nonumber &=P(C)P(X_1\mid C)P(X_2,...,X_n\mid C,X_1)&&\\
+\nomumber &=P(C)P(X_1\mid C)P(X_2\mid C,X_1)P(X_3,...,X_n\mid C,X_1,X_2)&&\\
+\nomumber &=P(C)P(X_1\mid C)P(X_2\mid C,X_1)\;...\;P(X_n\mid C,X_1,X_2,\;...\;X_{n-1})&&
+\end{align}
+
+
+\end{enumerate}
+
+% section conditional_and_total_probability_10_points_ (end)
 
 You can insert your figure by using \verb|\begin{figure}|.
 You can refer your figure by using \verb|\ref{fig:example_figure}|.
@@ -56,7 +110,7 @@ You can refer your figure by using \verb|\ref{fig:example_figure}|.
     \end{center}
 \end{figure}
 
-You can enumerate subquestions like this.
+You can enumerate sub questions like this.
 
 \begin{enumerate}
     \item Enumerate item 1.
@@ -92,7 +146,8 @@ Step & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Variable\\ eliminated\end{
 4    &                                                                                    &                                                                             &                                                                                   &                                                                          \\
 5    &                                                                                    &                                                                             &                                                                                   &                                                                          \\
 6    &                                                                                    &                                                                             &                                                                                   &                                                                          \\
-7    &                                                                                    &                                                                             &                                                                                   &                                                                         
+7    &                                                                                    &                                                                             &                                                                                   &                                                                          \\
+8    &                                                                                    &                                                                             &                                                                                   &
 \end{tabular}
 \caption{A run of variable elimination for the query $P(J)$}
 \label{table:VE}
