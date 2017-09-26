@@ -85,17 +85,55 @@ Therfore $N(am+b;a^2\sigma^2)$
 
 \begin{enumerate}
 
-\item By Chain Rules\\
-
+\item By Chain Rules
 \begin{align}
-\nomumber P(C,X_1,...,X_n)&=P(C)P(X_1,...,X_n\mid C)&&\\
-\nonumber &=P(C)P(X_1\mid C)P(X_2,...,X_n\mid C,X_1)&&\\
-\nomumber &=P(C)P(X_1\mid C)P(X_2\mid C,X_1)P(X_3,...,X_n\mid C,X_1,X_2)&&\\
-\nomumber &=P(C)P(X_1\mid C)P(X_2\mid C,X_1)\;...\;P(X_n\mid C,X_1,X_2,\;...\;X_{n-1})&&
+  \nonumber P(C,X_1,...,X_n)&=P(C)P(X_1,...,X_n\mid C)\\
+  \nonumber &=P(C)P(X_1\mid C)P(X_2,...,X_n\mid C,X_1)\\
+  \nonumber &=P(C)P(X_1\mid C)P(X_2\mid C,X_1)P(X_3,...,X_n\mid C,X_1,X_2)\\
+  \nonumber &=P(C)P(X_1\mid C)P(X_2\mid C,X_1)\;...\;P(X_n\mid C,X_1,X_2,\;...\;X_{n-1})
 \end{align}
-
-
+By Conditional independence property of Naive Bayes $i\neq j,k,l$
+\begin{align}
+  \nonumber P(x_i\mid C,x_j)=P(x_i\mid C),\\
+  \nonumber P(x_i\mid C,x_j,x_k)=P(x_i\mid C),\\
+  \nonumber P(x_i\mid C,x_j,x_k,x_l)=P(x_i\mid C),
+\end{align}
+So we can get following result
+\begin{align}
+  \nonumber P(C,X_1,...,X_n)&= P(C)P(X_1,...,X_n\mid C)\\
+  \nonumber &= P(C)P(x_1\mid C)P(x_3\mid C)P(x_2\mid C)\;...\\
+  \nonumber &= P(C)\prod_{i=1}^{n}P(x_i\mid C)\\
+\end{align}
+\item
+\begin{align}
+  \nonumber \frac{P(C=1\mid x_1,...,x_n)}{P(C=0\mid x_1,...,x_n)} &= \frac{\frac{P(C=1,x_1,...,x_n)}{P(x_1,...,x_n)}}{\frac{P(C=0,x_1,...,x_n)}{P(x_1,...,x_n)}}\\
+  \nonumber &=\frac{P(C=1,x_1,...,x_n)}{P(C=0,x_1,...,x_n)}\\
+  \nonumber &=\frac{P(C=1)}{P(C=0)}\frac{\prod_{i=1}^{n}P(x_i\mid C=1)}{\prod_{i=1}^{n}P(x_i\mid C=0)}=\frac{P(C=1)}{P(C=0)}\prod_{i=1}^{n}\frac{P(x_i\mid C=1)}{P(x_i\mid C=0)}
+\end{align}
+\item
+\begin{align}
+  \nonumber \frac{P(C=1\mid x_1,...,x_n)}{P(C=0\mid x_1,...,x_n)}&=\frac{P(C=1)}{P(C=0)}\prod_{i=1}^{n}\frac{P(x_i\mid C=1)}{P(x_i\mid C=0)}\\
+  \nonumber &=\sum_{i=1}^{n}\log\frac{P(x_i\mid C=1)}{P(x_i\mid C=0)}+\log{P(C=1)}-\log{P(C=0)}
+\end{align}
 \end{enumerate}
+
+\section{Graphical Model and Independence [10 points]}
+
+\begin{enumerate}
+  \item TRUE
+  \item TRUE
+  \item FALSE
+  \item TRUE
+  \item FALSE
+  \item FALSE
+  \item FALSE
+  \item TRUE
+  \item TRUE
+  \item TRUE
+\end{enumerate}
+
+\section{V-structure [15 points]}
+
 
 % section conditional_and_total_probability_10_points_ (end)
 
@@ -136,7 +174,7 @@ For example, cite Koller's PGM book \cite{KollerPGM} like this.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Some materials for HW2 [5 points]}
 
-\begin{table}[!h]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{c|l|l|l|l}
 Step & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Variable\\ eliminated\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Factors\\ used\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Variables\\ involved\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}New\\ factor\end{tabular}} \\ \hline
