@@ -136,67 +136,88 @@ So we can get following result
 \begin{enumerate}
   \item
   \begin{align}
-  P(C_1=H)=\frac{1}{2}
+  \nonumber P(C_1=H)=\frac{1}{2},\quad P(C_1=T)=\frac{1}{2}\\
+  \nonumber P(C_2=H)=\frac{1}{2},\quad P(C_2=T)=\frac{1}{2}\\
   \end{align}
+  $P(C_1=H,C_2=H)=\frac{1}{4}=P(C_1=H)P(C_2=H)=\frac{1}{2}\times\frac{1}{2}$\\
+  $P(C_1=H,C_2=T)=\frac{1}{4}=P(C_1=H)P(C_2=T)=\frac{1}{2}\times\frac{1}{2}$\\
+  $P(C_1=T,C_2=H)=\frac{1}{4}=P(C_1=T)P(C_2=H)=\frac{1}{2}\times\frac{1}{2}$\\
+  $P(C_1=T,C_2=T)=\frac{1}{4}=P(C_1=T)P(C_2=T)=\frac{1}{2}\times\frac{1}{2}$\\
+  Therefore, $P(C_1)\perp P(C_2)$
+  \item
+  $$P(C_2=H|B=F)=\frac{P(B=F|C_2=H)P(C_2=H)}{P(B=F)}=\frac{0.5\times0.5}{0.75}=\frac{1}{3}$$
+  \item
+  $$P(C_2=H\mid B=F,C_1=T)=\frac{1}{2}$$
+  $$P(C_1=H,C_2=H\mid B=T)=1\quad P(C_1=H\mid B=T)P(C_2=H\mid B=T)=1\cdot1=1$$
+  $$P(C_1=H,C_2=T\mid B=F)=\frac{1}{3}\quad P(C_1=H\mid B=F)P(C_2=T\mid B=F)=1\cdot\frac{1}{3}=\frac{1}{3}$$
+  Therefore, $P(C_1,C_2\mid B)=P(C_1\mid B)P(C_2\mid B)$\\
+  $C_1\mid B$ and $C_2\mid B$ are independent
+
+\section{I-Equivalence [10 points]}
+
+
+\section{Factorization Theorem [15 points]}
+
+
 \end{enumerate}
 
 
 
-% section conditional_and_total_probability_10_points_ (end)
+% % section conditional_and_total_probability_10_points_ (end)
 
-You can insert your figure by using \verb|\begin{figure}|.
-You can refer your figure by using \verb|\ref{fig:example_figure}|.
+% You can insert your figure by using \verb|\begin{figure}|.
+% You can refer your figure by using \verb|\ref{fig:example_figure}|.
 
-\begin{figure}[!h]
-    \begin{center}
-        \includegraphics[width=0.7\textwidth]{assets/fig1.png}
-        \caption{Example Figure}
-        \label{fig:example_figure}
-    \end{center}
-\end{figure}
+% \begin{figure}[!h]
+%     \begin{center}
+%         \includegraphics[width=0.7\textwidth]{assets/fig1.png}
+%         \caption{Example Figure}
+%         \label{fig:example_figure}
+%     \end{center}
+% \end{figure}
 
-You can enumerate sub questions like this.
+% You can enumerate sub questions like this.
 
-\begin{enumerate}
-    \item Enumerate item 1.
-    \item Enumerate item 2.
-    \item Enumerate item 3.
-\end{enumerate}
+% \begin{enumerate}
+%     \item Enumerate item 1.
+%     \item Enumerate item 2.
+%     \item Enumerate item 3.
+% \end{enumerate}
 
-You can write your equations by using \verb|\begin{aligned}|.
-We highly recommend you to use \verb|\newcommand| to simplify your equation in \LaTeX.
+% You can write your equations by using \verb|\begin{aligned}|.
+% We highly recommend you to use \verb|\newcommand| to simplify your equation in \LaTeX.
 
-\begin{align}
-    \Ab &= 12 \\
-    \alpha_{12}^{35} &= 1234 \\
-    \beta_1 &= 10
-\end{align}
+% \begin{align}
+%     \Ab &= 12 \\
+%     \alpha_{12}^{35} &= 1234 \\
+%     \beta_1 &= 10
+% \end{align}
 
-You can cite your reference by using \verb|\cite{reference_name}|.
-For example, cite Koller's PGM book \cite{KollerPGM} like this.
+% You can cite your reference by using \verb|\cite{reference_name}|.
+% For example, cite Koller's PGM book \cite{KollerPGM} like this.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Q2
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Some materials for HW2 [5 points]}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Q2
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{Some materials for HW2 [5 points]}
 
-\begin{table}[!ht]
-\centering
-\begin{tabular}{c|l|l|l|l}
-Step & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Variable\\ eliminated\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Factors\\ used\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Variables\\ involved\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}New\\ factor\end{tabular}} \\ \hline
-1    &                                                                                    &                                                                             &                                                                                   &                                                                          \\
-2    &                                                                                    &                                                                             &                                                                                   &                                                                          \\
-3    &                                                                                    &                                                                             &                                                                                   &                                                                          \\
-4    &                                                                                    &                                                                             &                                                                                   &                                                                          \\
-5    &                                                                                    &                                                                             &                                                                                   &                                                                          \\
-6    &                                                                                    &                                                                             &                                                                                   &                                                                          \\
-7    &                                                                                    &                                                                             &                                                                                   &                                                                          \\
-8    &                                                                                    &                                                                             &                                                                                   &
-\end{tabular}
-\caption{A run of variable elimination for the query $P(J)$}
-\label{table:VE}
-\end{table}
+% \begin{table}[!ht]
+% \centering
+% \begin{tabular}{c|l|l|l|l}
+% Step & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Variable\\ eliminated\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Factors\\ used\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Variables\\ involved\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}New\\ factor\end{tabular}} \\ \hline
+% 1    &                                                                                    &                                                                             &                                                                                   &                                                                          \\
+% 2    &                                                                                    &                                                                             &                                                                                   &                                                                          \\
+% 3    &                                                                                    &                                                                             &                                                                                   &                                                                          \\
+% 4    &                                                                                    &                                                                             &                                                                                   &                                                                          \\
+% 5    &                                                                                    &                                                                             &                                                                                   &                                                                          \\
+% 6    &                                                                                    &                                                                             &                                                                                   &                                                                          \\
+% 7    &                                                                                    &                                                                             &                                                                                   &                                                                          \\
+% 8    &                                                                                    &                                                                             &                                                                                   &
+% \end{tabular}
+% \caption{A run of variable elimination for the query $P(J)$}
+% \label{table:VE}
+% \end{table}
 
 % Bibtex
 \bibliography{writeup}
